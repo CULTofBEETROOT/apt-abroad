@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mullvad relay list | grep -o '^............' | grep wg | grep -o '^....' | sort -u | sed 's/\t//g'
+
+
