@@ -9,6 +9,8 @@ tmp="$urls_dir/urls.tmp"
 
 touch "$https_out" "$http_out"
 
+curl -fsSL 'https://www.debian.org/mirror/list#per-country' | grep -oE 'https?://[^"'"'"'[:space:]]+/debian/?' | sed 's#/$##' | sort -u > "$urls_dir/urls.txt"
+
 while true; do
   # Re-safeguard in case the file changes during the run
   [ -s "$in" ] || break
