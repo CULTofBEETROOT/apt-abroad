@@ -1,7 +1,7 @@
 #!/bin/bash
 #install apt-abroad
 
-unzip Downloads/apt-abroad-main.zip -d "Downloads"
+unzip /home/$USER/Downloads/apt-abroad-main.zip -d "Downloads"
 
 bash /home/$USER/Downloads/apt-abroad-main/apt-httpsonly.sh
 bash /home/$USER/Downloads/apt-abroad-main/set_funcenv.sh
