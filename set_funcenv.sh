@@ -6,7 +6,7 @@
 
 
 mkdir -p /home/$USER/.bash_functions.d
-touch /home/$USER/.bash_functions.d/load.sh
+touch /home/$USER/.bash_functions.d/fload.sh
 
 cat>/home/$USER/.bash_functions.d/fload.sh<<'endOFfloadsh'
 #!/bin/bash
