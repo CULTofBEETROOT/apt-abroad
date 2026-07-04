@@ -17,4 +17,4 @@ cat /etc/apt/apt-abroad/debianMirror4mullvd.list | grep ".$movecc/debian" | tail
 }
 endOFchangemirrorsh
 
-source /home/$USER/.bash_functions.d/resync.load
+source /home/$USER/.bash_functions.d/dirsync.load
