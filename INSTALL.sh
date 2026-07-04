@@ -14,5 +14,5 @@ bash /home/$USER/Downloads/apt-abroad-main/setfunc_changemirror.sh
 
 chmod +x /home/$USER/.bash_functions.d/changemirror.sh
 source /home/$USER/.bash_functions.d/changemirror.sh
-chmod +x /home/$USER/.bash_functions.d/resync.load
-source /home/$USER/.bash_functions.d/resync.load
+chmod +x /home/$USER/.bash_functions.d/dirsync.load
+source /home/$USER/.bash_functions.d/dirsync.load
