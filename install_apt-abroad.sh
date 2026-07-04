@@ -13,5 +13,13 @@ mullvad relay set location ca
 
 CAendof
 
+
+mullvad relay list | grep -o '^............' | grep wg | grep -o '^....' | sort -u | sed 's/\t//g' > /etc/apt/apt-abroad/ccMullvad.list
+
+
+cat /etc/apt/apt-abroad/urls.https | sed 's/https:\/\///g' | grep -o '^.*\/debian' | sed 's/.*\(..........\)$/\1/' | sort -u | grep "\." | sed 's/\/debian//g' | sed 's/\.//g' > /etc/apt/apt-abroad/ccDebianhttps.list
+grep -F -x -f /etc/apt/apt-abroad/ccMullvad.list etc/apt/apt-abroad/ccDebianhttps.list | sed 's/^/*&/' | sed 's/$/\/debian/' > /etc/apt/apt-abroad/ccDebianhttsMullvad.list
+awk 'NR==FNR{p[$0]=1; n++; next}     {for (k in p) if (index($0,k)) {print; break}}' /etc/apt/apt-abroad/ccDebianhttsMullvad.list Downloads/urls.https  
+
 source ~/.bashrc
 
