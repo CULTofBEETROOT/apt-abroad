@@ -1,0 +1,17 @@
+#!/bin/bash
+#compute the list of available mullvad / debian mirror matches that are https secure
+#change apt source (in 822 format) to a chosen exit location mirror 
+#the function changemirror is called with country (cc) code for input :
+# eg. : changemirror fi
+cat>/home/$USER/.bash_functions.d/changemirror.sh<'endOFchangemirrorsh'
+changemirror () {
+movecc="$1";
+mullvad relay list | grep -o '^............' | grep wg | grep -o '^....' | sort -u | sed 's/\t//g' > /etc/apt/apt-abroad/ccMullvad.list
+cat /etc/apt/apt-abroad/urls.https | sed 's/https:\/\///g' | grep -o '^.*\/debian' | sed 's/.*\(..........\)$/\1/' | sort -u | grep "\." | sed 's/\/debian//g' | sed 's/\.//g' > /etc/apt/apt-abroad/ccDebianhttps.list
+grep -F -x -f /etc/apt/apt-abroad/ccMullvad.list /etc/apt/apt-abroad/ccDebianhttps.list | sed 's/^/*&/' | sed 's/$/\/debian/' > /etc/apt/apt-abroad/ccDebianhttsMullvad.list
+awk 'NR==FNR{p[$0]=1; n++; next}     {for (k in p) if (index($0,k)) {print; break}}' /etc/apt/apt-abroad/ccDebianhttsMullvad.list /etc/apt/apt-abroad/urls.https > /etc/apt/apt-abroad/debhttpsmulmirr.list
+rm /etc/apt/apt-abroad/ccDebianhttsMullvad.list
+rm /etc/apt/apt-abroad/ccDebianhttps.list
+rm /etc/apt/apt-abroad/ccMullvad.list
+cat /etc/apt/apt-abroad/debianMirror4mullvd.list | grep ".$movecc/debian" | tail -n 1
+}
