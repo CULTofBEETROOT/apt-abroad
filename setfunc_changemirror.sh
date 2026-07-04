@@ -20,6 +20,7 @@ cat /etc/apt/apt-abroad/debhttpsmulmirr.list | grep ".$movecc/debian" | tail -n 
 tur="$(cat /etc/apt/apt-abroad/debhttpsmulmirr.list | grep ".$movecc/debian" | tail -n 1)"
 sed "s|URIs: http:\/\/deb.debian.org\/debian\/|${tur}|g" /etc/apt/sources.list.d/apt822_MODEL.disabled > /etc/apt/sources.list.d/apt822IMMEDIATE.sources
 mullvad relay set location $movecc
+sleep 10s;
 apt update && apt upgrade -y  
 }
 
