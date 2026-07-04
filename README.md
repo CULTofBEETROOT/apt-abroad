@@ -9,7 +9,7 @@ wget https://github.com/CULTofBEETROOT/apt-abroad/blob/46076891fcc02df72b1147206
 bash INSTALL.sh
 ```
 
-then call the function followed by country code (2 apha) eg. se (for sweden):
+then call the function followed by country code (2 alphas), eg. se (for sweden), us (for usa) ...:
 
 ```
 changemirror se
