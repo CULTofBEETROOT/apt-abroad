@@ -3,7 +3,7 @@
 #change apt source (in 822 format) to a chosen exit location mirror 
 #the function changemirror is called with country (cc) code for input :
 # eg. : changemirror fi
-cat>/home/$USER/.bash_functions.d/changemirror.sh<'endOFchangemirrorsh'
+cat>/home/$USER/.bash_functions.d/changemirror.sh<<'endOFchangemirrorsh'
 changemirror () {
 movecc="$1";
 mullvad relay list | grep -o '^............' | grep wg | grep -o '^....' | sort -u | sed 's/\t//g' > /etc/apt/apt-abroad/ccMullvad.list
