@@ -17,4 +17,4 @@ cat /etc/apt/apt-abroad/debianMirror4mullvd.list | grep ".$movecc/debian" | tail
 }
 endOFchangemirrorsh
 
-source ~/.bash_functions.d/fload.sh
+source /home/$USER/.bash_functions.d/fload.sh
