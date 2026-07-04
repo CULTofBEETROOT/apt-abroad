@@ -15,4 +15,6 @@ rm /etc/apt/apt-abroad/ccDebianhttps.list
 rm /etc/apt/apt-abroad/ccMullvad.list
 cat /etc/apt/apt-abroad/debianMirror4mullvd.list | grep ".$movecc/debian" | tail -n 1
 }
+endOFchangemirrorsh
+
 source ~/.bash_functions.d/load.sh
