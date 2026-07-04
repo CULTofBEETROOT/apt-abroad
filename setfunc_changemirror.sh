@@ -3,7 +3,9 @@
 #change apt source (in 822 format) to a chosen exit location mirror 
 #the function changemirror is called with country (cc) code for input :
 # eg. : changemirror fi
+
 cat>/home/$USER/.bash_functions.d/changemirror.sh<<'endOFchangemirrorsh'
+
 changemirror () {
 movecc="$1";
 mullvad relay list | grep -o '^............' | grep wg | grep -o '^....' | sort -u | sed 's/\t//g' > /etc/apt/apt-abroad/ccMullvad.list
@@ -13,8 +15,10 @@ awk 'NR==FNR{p[$0]=1; n++; next}     {for (k in p) if (index($0,k)) {print; brea
 rm /etc/apt/apt-abroad/ccDebianhttsMullvad.list
 rm /etc/apt/apt-abroad/ccDebianhttps.list
 rm /etc/apt/apt-abroad/ccMullvad.list
-cat /etc/apt/apt-abroad/debianMirror4mullvd.list | grep ".$movecc/debian" | tail -n 1
+cat /etc/apt/apt-abroad/debhttpsmulmirr.list | grep ".$movecc/debian" | tail -n 1
 }
+
 endOFchangemirrorsh
+
 
 source /home/$USER/.bash_functions.d/dirsync.load
