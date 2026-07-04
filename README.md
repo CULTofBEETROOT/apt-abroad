@@ -25,9 +25,11 @@ for demonstration puposes a line :
 is already present in the script... feel free to remove this line.
 
 
+(tor-redirects later).
+#
+#
 
-HAPPY CODING ON :  if you lastingly like this code, feel free giving a cofee to a charity.
+would you *lastingly* like this code, feel free giving a cofee to a charity...
 
 I would be thrilled to hear this was a charity to help prisonners' rights against abusive detention treatments.
-
-(tor-redirects later).  
+(like french women receiving limited tampons and having to buy with below minimum wage the remaining quantities).
