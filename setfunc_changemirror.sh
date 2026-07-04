@@ -4,6 +4,9 @@
 #the function changemirror is called with country (cc) code for input :
 # eg. : changemirror fi
 
+mv /etc/apt/sources.list.d/debian.sources /etc/apt/sources.list.d/apt822_MODEL.disabled
+cp /etc/apt/sources.list.d/apt822_MODEL.disabled /etc/apt/apt-abroad/
+
 cat>/home/$USER/.bash_functions.d/changemirror.sh<<'endOFchangemirrorsh'
 
 changemirror () {
@@ -17,7 +20,7 @@ awk 'NR==FNR{p[$0]=1; n++; next}     {for (k in p) if (index($0,k)) {print; brea
 rm /etc/apt/apt-abroad/ccDebianhttsMullvad.list
 rm /etc/apt/apt-abroad/ccDebianhttps.list
 rm /etc/apt/apt-abroad/ccMullvad.list
-cat /etc/apt/apt-abroad/debhttpsmulmirr.list | grep ".$movecc/debian" | tail -n 1
+cat /etc/apt/apt-abroad/debhttpsmulmirr.list | grep ".$movecc/debian" | tail -n 1 > /etc/apt/apt-abroad/debianIMMEDIATE.sources
 }
 
 endOFchangemirrorsh
