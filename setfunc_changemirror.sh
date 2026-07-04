@@ -11,8 +11,6 @@ cat>/home/$USER/.bash_functions.d/changemirror.sh<<'endOFchangemirrorsh'
 
 changemirror () {
 movecc="$1";
-echo "$movecc";
-echo "here";
 mullvad relay list | grep -o '^............' | grep wg | grep -o '^....' | sort -u | sed 's/\t//g' > /etc/apt/apt-abroad/ccMullvad.list
 cat /etc/apt/apt-abroad/urls.https | sed 's/https:\/\///g' | grep -o '^.*\/debian' | sed 's/.*\(..........\)$/\1/' | sort -u | grep "\." | sed 's/\/debian//g' | sed 's/\.//g' > /etc/apt/apt-abroad/ccDebianhttps.list
 grep -F -x -f /etc/apt/apt-abroad/ccMullvad.list /etc/apt/apt-abroad/ccDebianhttps.list | sed 's/^/*&/' | sed 's/$/\/debian/' > /etc/apt/apt-abroad/ccDebianhttsMullvad.list
