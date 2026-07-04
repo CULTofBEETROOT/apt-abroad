@@ -15,7 +15,8 @@ then call the function followed by country code (2 apha): eg. se (for sweden)
 changemirror se
 ```
 
-normally, mullvap redirects and a new /etc/apt/sources.list.d/apt822IMMEDIATE.sources is created ready for update https-encrypted
+normally, mullvap redirects and a new /etc/apt/sources.list.d/apt822IMMEDIATE.sources is created ready for update, https-encrypted!
+
 
 for demonstration puposes a line :
 
@@ -24,5 +25,9 @@ for demonstration puposes a line :
 is already present in the script... feel free to remove this line.
 
 
-NB: if you liked this code, feel free giving a cofee to a charity.
+
+HAPPY CODING ON :  if you lastingly like this code, feel free giving a cofee to a charity.
+
 I would be thrilled to hear this was a charity to help prisonners' rights against abusive detention treatments.
+
+(tor-redirects later).  
