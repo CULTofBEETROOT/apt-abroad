@@ -20,7 +20,6 @@ mullvad relay set location $movecc
 sleep 10s;
 apt update && apt upgrade -y  
 }
-
 endOFchangemirrorsh
 
 
