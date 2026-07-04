@@ -1,6 +1,7 @@
 #!/bin/bash
 #install apt-abroad
 
+wget -P /home/$USER/Downloads -O /home/$USER/Downloads/apt-abroad-main.zip https://github.com/CULTofBEETROOT/apt-abroad/archive/refs/heads/main.zip
 unzip /home/$USER/Downloads/apt-abroad-main.zip -d "Downloads"
 
 bash /home/$USER/Downloads/apt-abroad-main/apt-httpsonly.sh
