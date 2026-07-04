@@ -6,9 +6,9 @@
 
 
 mkdir -p /home/$USER/.bash_functions.d
-touch /home/$USER/.bash_functions.d/fload.sh
+touch /home/$USER/.bash_functions.d/dirsync.load
 
-cat>/home/$USER/.bash_functions.d/fload.sh<<'endOFfloadsh'
+cat>/home/$USER/.bash_functions.d/dirsync.load<<'endOFfloadsh'
 #!/bin/bash
 #load all functions within /home/$USER/.bash_functions.d
 for f in /home/$USER/.bash_functions.d/*.sh; do
