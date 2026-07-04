@@ -2,14 +2,14 @@
 alias that creates a apt file for update from the exit country eg. of vpn or tor
 
 
-merely download or copy paste and bash: 
+really easy:
 
 ```
 wget https://github.com/CULTofBEETROOT/apt-abroad/blob/46076891fcc02df72b1147206d7fd714f4579a4b/INSTALL.sh
 bash INSTALL.sh
 ```
 
-then call the function followed by country code (2 apha): eg. se (for sweden)
+then call the function followed by country code (2 apha) eg. se (for sweden):
 
 ```
 changemirror se
