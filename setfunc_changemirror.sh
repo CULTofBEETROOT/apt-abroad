@@ -9,8 +9,8 @@ cp /etc/apt/sources.list.d/apt822_MODEL.disabled /etc/apt/apt-abroad/
 
 cat>/home/$USER/.bash_functions.d/changemirror.sh<<'endOFchangemirrorsh'
 changemirror () {
-rm /etc/apt/sources.list.d/*IMMEDIATE.sources;
 movecc="$1";
+rm /etc/apt/sources.list.d/*IMMEDIATE.sources;
 mullvad relay list | grep -o '^............' | grep wg | grep -o '^....' | sort -u | sed 's/\t//g' > /etc/apt/apt-abroad/ccMullvad.list;
 cat /etc/apt/apt-abroad/urls.https | sed 's/https:\/\///g' | grep -o '^.*\/debian' | sed 's/.*\(..........\)$/\1/' | sort -u | grep "\." | sed 's/\/debian//g' | sed 's/\.//g' > /etc/apt/apt-abroad/ccDebianhttps.list;
 grep -F -x -f /etc/apt/apt-abroad/ccMullvad.list /etc/apt/apt-abroad/ccDebianhttps.list | sed 's/^/&/' | sed 's/$/\/debian/' > /etc/apt/apt-abroad/ccDebianhttsMullvad.list;
