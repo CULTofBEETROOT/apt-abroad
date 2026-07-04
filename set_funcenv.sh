@@ -2,7 +2,7 @@
 #prepare user functions directory
 #can be called whenever and will not destroy functions
 #should be called at end of every new function with : 
-#source ~/.bash_functions.d/load.sh
+#source ~/.bash_functions.d/dirsync.load
 
 
 mkdir -p /home/$USER/.bash_functions.d
