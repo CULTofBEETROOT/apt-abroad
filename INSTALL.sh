@@ -8,7 +8,7 @@ chmod +x /home/$USER/Downloads/apt-abroad-main/apt-httpsonly.sh
 chmod +x /home/$USER/Downloads/apt-abroad-main/set_funcenv.sh
 chmod +x /home/$USER/Downloads/apt-abroad-main/setfunc_changemirror.sh
 
-# remove this if mullvad is already install 
+# remove this if mullvad is already installed 
 chmod +x /home/$USER/Downloads/apt-abroad-main/install_Mullvad.sh
 bash /home/$USER/Downloads/apt-abroad-main/install_Mullvad.sh
 # only the above. Note you must have a Mullvad account.
