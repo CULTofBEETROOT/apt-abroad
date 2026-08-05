@@ -23,5 +23,5 @@ apt update && apt upgrade -y;
 }
 endOFchangemirrorsh
 
-
+source /home/$USER/.bash_functions.d/changemirror.sh
 source /home/$USER/.bash_functions.d/dirsync.load
