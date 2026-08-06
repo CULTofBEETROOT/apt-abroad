@@ -1,5 +1,5 @@
 # apt-abroad
-function that creates a apt file for update from the exit country of mullvad, with tor wrapped within:
+function that creates a apt file for update from the mullvad exit country, with sub-layers: tor and https.
 
 ╬░░░░░░░░░░╬═════════════════════════════╬░░░░░░░░░░░░░░░░░░░║
 ║░░░░░░░░░░║█░░░█░█░█░█░░░█░░█░░█░███░░░█║░░░░░░░░░░░░░░░░░░░║
