@@ -1,5 +1,6 @@
 # apt-abroad
-function that creates a apt file for update from the mullvad exit country, with sub-layers: tor and https.
+function that creates a source file for debian updates served from the mullvad exit country, 
+with sub-layers: tor over https.
 
 ╬░░░░░░░░░░╬═════════════════════════════╬░░░░░░░░░░░░░░░░░░░║
 ║░░░░░░░░░░║█░░░█░█░█░█░░░█░░█░░█░███░░░█║░░░░░░░░░░░░░░░░░░░║
