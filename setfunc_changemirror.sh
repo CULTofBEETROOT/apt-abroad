@@ -7,6 +7,8 @@ if ls /etc/apt/*.list >/dev/null 2>&1; then
 apt-modernize sources
 fi
 
+apt install -y apt-transport-tor
+
 mv /etc/apt/sources.list.d/debian.sources /etc/apt/sources.list.d/apt822_MODEL.disabled
 cp /etc/apt/sources.list.d/apt822_MODEL.disabled /etc/apt/apt-abroad/
 
