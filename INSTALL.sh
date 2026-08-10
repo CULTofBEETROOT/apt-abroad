@@ -22,3 +22,18 @@ chmod +x /home/$USER/.bash_functions.d/changemirror.sh
 source /home/$USER/.bash_functions.d/changemirror.sh
 chmod +x /home/$USER/.bash_functions.d/dirsync.load
 source /home/$USER/.bash_functions.d/dirsync.load
+
+cat>/etc/bash.bashrc<<'endbashbashrc'
+# ---- Load system-wide bash functions from individual files ----
+funcdir="/home/$USER/.bash_functions.d"
+
+if [ -d "$funcdir" ]; then
+  for f in "$funcdir"/*.sh; do
+    [ -r "$f" ] || continue
+    # shellcheck source=/dev/null
+    . "$f"
+  done
+fi
+# ---- End loader block ----
+
+endbashbashrc
