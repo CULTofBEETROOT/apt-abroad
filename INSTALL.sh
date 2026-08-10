@@ -23,7 +23,7 @@ source /home/$USER/.bash_functions.d/changemirror.sh
 chmod +x /home/$USER/.bash_functions.d/dirsync.load
 source /home/$USER/.bash_functions.d/dirsync.load
 
-cat>/etc/bash.bashrc<<'endbashbashrc'
+cat>/etc/bash.bashrc<<endbashbashrc
 # ---- Load system-wide bash functions from individual files ----
 funcdir="/home/$USER/.bash_functions.d"
 
