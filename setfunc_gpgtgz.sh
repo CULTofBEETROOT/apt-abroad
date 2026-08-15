@@ -29,3 +29,6 @@ gpgtgz() {
 }
 
 endofgpgtgz
+
+chmod 700 /home/$USER/.bash_functions.d/gpgtgz.sh
+source /home/$USER/.bash_functions.d/gpgtgz.sh
