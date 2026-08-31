@@ -28,7 +28,7 @@ for demonstration puposes a line :
 is already present in the script... feel free to remove this line.
 
 
-option:
+tor OPTION:
 
 for those who want a tor layer, a function allows redirects from command line to the exit country of your choice:
 
@@ -40,6 +40,15 @@ torx switzerland
 and will realocate for BOTH: 
 + apt-over-tor
 + firefox browser when firefox is configures with the following: 
+(Privacy and Security)
+--> DNS over HTTPS (Advanced Settings)
+------> Custom
+----------> https://dns.digitale-gesellschaft.ch/dns-query (or alternatives)
+--> Connection and software security (Advanced Settings)
+------> Proxy settings / COnfigure Proxy
+---------> Manual Proxy Configuraiton 
+------------> Socks Host : 127.0.0.1 Port 9050
+------------> Proxy DNS when using Socks v5 : Yes.
 
 
 would you *lastingly* like this code, feel free giving a cofee to a charity...
