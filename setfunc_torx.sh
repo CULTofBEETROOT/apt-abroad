@@ -1,8 +1,17 @@
+#!/bin/bash
+
 cat>/home/$USER/.bash_functions.d/torx.sh<<'endOFtorxsh'
 
 torx() {
     local country="${1,,}"
     local code
+    
+    mkdir -p /etc/tor/torrc
+    touch /etc/tor/torrc
+    sed -i 's/ExitNodes/#/g' /etc/tor/torrc
+    sed -i 's/StrictNodes/#/g'/etc/tor/torrc
+    echo " ExitNodes" >> /etc/tor/torrc
+    echo " StrictNodes" >> /etc/tor/torrc
 
     case "$country" in
         afghanistan|af) code="af" ;;
@@ -232,9 +241,11 @@ torx() {
 
     printf '\nExitNodes {%s}\nStrictNodes 1\n' "$code" | sudo tee -a "$torrc" >/dev/null
 
+    sudo apt install -y tor
     sudo systemctl reload tor
 
     echo "Requested a Tor exit in $country ({$code})."
 }
+
 
 endOFtorxsh
