@@ -1,3 +1,5 @@
+cat>/home/$USER/.bash_functions.d/torx.sh<<'endOFtorxsh'
+
 torx() {
     local country="${1,,}"
     local code
@@ -234,3 +236,5 @@ torx() {
 
     echo "Requested a Tor exit in $country ({$code})."
 }
+
+endOFtorxsh
