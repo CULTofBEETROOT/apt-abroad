@@ -28,9 +28,19 @@ for demonstration puposes a line :
 is already present in the script... feel free to remove this line.
 
 
-(tor-redirects later).
-#
-#
+option:
+
+for those who want a tor layer, a function allows redirects from command line to the exit country of your choice:
+
+```
+torx switzerland
+```
+
+...the above command can be used for extra (tor hidden by Mullvad) OR alternative (No Mullvad but tor) Exit country change,
+and will realocate for BOTH: 
++ apt-over-tor
++ firefox browser when firefox is configures with the following: 
+
 
 would you *lastingly* like this code, feel free giving a cofee to a charity...
 
