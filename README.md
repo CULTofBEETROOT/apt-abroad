@@ -51,6 +51,8 @@ and will realocate for BOTH:
 ------------> Proxy DNS when using Socks v5 : Yes.
 
 
+
+
 would you *lastingly* like this code, feel free giving a cofee to a charity...
 
 I would be thrilled to hear this was a charity to help prisonners' rights against abusive detention treatments.
