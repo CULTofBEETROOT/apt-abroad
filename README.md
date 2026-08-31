@@ -44,7 +44,7 @@ and will realocate for BOTH:
 + apt-over-tor
 
 
-+ firefox browser when firefox is configures with the following: 
++ firefox browser when firefox is configured with the following: 
 
 Privacy and Security
 
