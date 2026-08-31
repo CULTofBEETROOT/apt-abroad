@@ -7,6 +7,7 @@ unzip /home/$USER/Downloads/apt-abroad-main.zip -d "Downloads"
 chmod +x /home/$USER/Downloads/apt-abroad-main/apt-httpsonly.sh
 chmod +x /home/$USER/Downloads/apt-abroad-main/set_funcenv.sh
 chmod +x /home/$USER/Downloads/apt-abroad-main/setfunc_changemirror.sh
+chmod +x /home/$USER/Downloads/apt-abroad-main/setfunc_torx.sh
 
 # remove this if mullvad is already installed 
 chmod +x /home/$USER/Downloads/apt-abroad-main/install_Mullvad.sh
@@ -16,12 +17,14 @@ bash /home/$USER/Downloads/apt-abroad-main/install_Mullvad.sh
 bash /home/$USER/Downloads/apt-abroad-main/apt-httpsonly.sh
 bash /home/$USER/Downloads/apt-abroad-main/set_funcenv.sh
 bash /home/$USER/Downloads/apt-abroad-main/setfunc_changemirror.sh
-
+bash /home/$USER/Downloads/apt-abroad-main/setfunc_torx.sh
 
 chmod +x /home/$USER/.bash_functions.d/changemirror.sh
 source /home/$USER/.bash_functions.d/changemirror.sh
 chmod +x /home/$USER/.bash_functions.d/dirsync.load
 source /home/$USER/.bash_functions.d/dirsync.load
+chmod +x /home/$USER/.bash_functions.d/setfunc_torx.sh
+source /home/$USER/.bash_functions.d/setfunc_torx.sh
 
 cat>/etc/bash.bashrc<<endbashbashrc
 # ---- Load system-wide bash functions from individual files ----
