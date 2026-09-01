@@ -8,7 +8,7 @@ with sub-layers: tor over https.
 really easy:
 
 ```
-wget https://github.com/CULTofBEETROOT/apt-abroad/blob/46076891fcc02df72b1147206d7fd714f4579a4b/INSTALL.sh
+wget https://github.com/CULTofBEETROOT/apt-abroad/blob/93619e782bda378cdbe8808c6959234ed64ed4dc/INSTALL.sh
 bash INSTALL.sh
 ```
 
