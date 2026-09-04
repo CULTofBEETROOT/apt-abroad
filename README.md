@@ -46,7 +46,7 @@ and will realocate for BOTH:
 
 + firefox browser when firefox is configured with the following: 
 
-Privacy and Security
++ go to Privacy and Security
 
 +  1 --> DNS over HTTPS (Advanced Settings)
 
