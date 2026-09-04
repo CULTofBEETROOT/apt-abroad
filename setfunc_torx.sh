@@ -1,7 +1,6 @@
 #!/bin/bash
 
 cat>/home/$USER/.bash_functions.d/torx.sh<<'endOFtorxsh'
-
 torx() {
     local country="${1,,}"
     local code
@@ -10,12 +9,12 @@ torx() {
         afghanistan|af) code="af" ;;
         albania|al) code="al" ;;
         algeria|dz) code="dz" ;;
-        american|samoa|as) code="as" ;;
+        american-samoa|as) code="as" ;;
         andorra|ad) code="ad" ;;
         angola|ao) code="ao" ;;
         anguilla|ai) code="ai" ;;
         antarctica|aq) code="aq" ;;
-        antigua|and|barbuda|ag) code="ag" ;;
+        antigua-and-barbuda|ag) code="ag" ;;
         argentina|ar) code="ar" ;;
         armenia|am) code="am" ;;
         aruba|aw) code="aw" ;;
@@ -32,26 +31,26 @@ torx() {
         benin|bj) code="bj" ;;
         bermuda|bm) code="bm" ;;
         bhutan|bt) code="bt" ;;
-        bolivia|plurinational|state|of) code="bo" ;;
-        bosnia|and|herzegovina|ba) code="ba" ;;
+        bolivia|bo) code="bo" ;;
+        bosnia-and-herzegovina|ba) code="ba" ;;
         botswana|bw) code="bw" ;;
         brazil|br) code="br" ;;
-        brunei|darussalam|bn) code="bn" ;;
+        brunei|brunei-darussalam|bn) code="bn" ;;
         bulgaria|bg) code="bg" ;;
-        burkina|faso|bf) code="bf" ;;
+        burkina-faso|bf) code="bf" ;;
         burundi|bi) code="bi" ;;
         cambodia|kh) code="kh" ;;
         cameroon|cm) code="cm" ;;
         canada|ca) code="ca" ;;
-        cape|verde|cv) code="cv" ;;
-        cayman|islands|ky) code="ky" ;;
-        central|african|republic|cf) code="cf" ;;
+        cape-verde|cv) code="cv" ;;
+        cayman-islands|ky) code="ky" ;;
+        central-african|republic|cf) code="cf" ;;
         chad|td) code="td" ;;
         chile|cl) code="cl" ;;
         china|cn) code="cn" ;;
         colombia|co) code="co" ;;
         congo|cg) code="cg" ;;
-        costa|rica|cr) code="cr" ;;
+        costa-rica|cr) code="cr" ;;
         croatia|hr) code="hr" ;;
         cuba|cu) code="cu" ;;
         cyprus|cy) code="cy" ;;
@@ -59,11 +58,11 @@ torx() {
         denmark|dk) code="dk" ;;
         djibouti|dj) code="dj" ;;
         dominica|dm) code="dm" ;;
-        dominican|republic|do) code="do" ;;
+        dominican-republic|do) code="do" ;;
         ecuador|ec) code="ec" ;;
         egypt|eg) code="eg" ;;
-        el|salvador|sv) code="sv" ;;
-        equatorial|guinea|gq) code="gq" ;;
+        el-salvador|sv) code="sv" ;;
+        equatorial-guinea|gq) code="gq" ;;
         eritrea|er) code="er" ;;
         estonia|ee) code="ee" ;;
         ethiopia|et) code="et" ;;
@@ -83,12 +82,12 @@ torx() {
         guyana|gy) code="gy" ;;
         haiti|ht) code="ht" ;;
         honduras|hn) code="hn" ;;
-        hong|kong|hk) code="hk" ;;
+        hong-kong|hk) code="hk" ;;
         hungary|hu) code="hu" ;;
         iceland|is) code="is" ;;
         india|in) code="in" ;;
         indonesia|id) code="id" ;;
-        iran|islamic|republic|of) code="ir" ;;
+        iran|ir) code="ir" ;;
         iraq|iq) code="iq" ;;
         ireland|ie) code="ie" ;;
         israel|il) code="il" ;;
@@ -99,7 +98,7 @@ torx() {
         kazakhstan|kz) code="kz" ;;
         kenya|ke) code="ke" ;;
         kiribati|ki) code="ki" ;;
-        korea|republic|of|kr) code="kr" ;;
+        south-korea|kr) code="kr" ;;
         kuwait|kw) code="kw" ;;
         kyrgyzstan|kg) code="kg" ;;
         latvia|lv) code="lv" ;;
@@ -135,27 +134,27 @@ torx() {
         nauru|nr) code="nr" ;;
         nepal|np) code="np" ;;
         netherlands|nl) code="nl" ;;
-        new|caledonia|nc) code="nc" ;;
-        new|zealand|nz) code="nz" ;;
+        new-caledonia|nc) code="nc" ;;
+        new-zealand|nz) code="nz" ;;
         nicaragua|ni) code="ni" ;;
         niger|ne) code="ne" ;;
         nigeria|ng) code="ng" ;;
         niue|nu) code="nu" ;;
-        norfolk|island|nf) code="nf" ;;
-        north|macedonia|mk) code="mk" ;;
+        norfolk-island|nf) code="nf" ;;
+        north-macedonia|mk) code="mk" ;;
         norway|no) code="no" ;;
         oman|om) code="om" ;;
         pakistan|pk) code="pk" ;;
         palau|pw) code="pw" ;;
-        palestine|state|of) code="ps" ;;
+        palestine) code="ps" ;;
         panama|pa) code="pa" ;;
-        papua|new|guinea|pg) code="pg" ;;
+        papua-new-guinea|pg) code="pg" ;;
         paraguay|py) code="py" ;;
         peru|pe) code="pe" ;;
         philippines|ph) code="ph" ;;
         poland|pl) code="pl" ;;
         portugal|pt) code="pt" ;;
-        puerto|rico|pr) code="pr" ;;
+        puerto-rico|pr) code="pr" ;;
         qatar|qa) code="qa" ;;
         reunion|re) code="re" ;;
         romania|ro) code="ro" ;;
@@ -164,11 +163,13 @@ torx() {
         saint|helena|sh) code="sh" ;;
         saint|kitts|and|nevis|kn) code="kn" ;;
         saint|lucia|lc) code="lc" ;;
-        saint|vincent|and|the|grenadines|vc) code="vc" ;;
+        saint-vincent|vc) code="vc" ;;
+        grenadines|vc) code="vc" ;;
         samoa|ws) code="ws" ;;
-        san|marino|sm) code="sm" ;;
-        sao|tome|and|principe|st) code="st" ;;
-        saudi|arabia|sa) code="sa" ;;
+        san-marino|sm) code="sm" ;;
+        principe|st) code="st" ;;
+        sao-tome|st) code="st" ;;
+        saudi-arabia|sa) code="sa" ;;
         senegal|sn) code="sn" ;;
         serbia|rs) code="rs" ;;
         seychelles|sc) code="sc" ;;
@@ -176,45 +177,45 @@ torx() {
         slovakia|sk) code="sk" ;;
         slovenia|si) code="si" ;;
         somalia|so) code="so" ;;
-        south|africa|za) code="za" ;;
-        south|sudan|ss) code="ss" ;;
+        south-africa|za) code="za" ;;
+        south-sudan|ss) code="ss" ;;
         spain|es) code="es" ;;
-        sri|lanka|lk) code="lk" ;;
+        sri-lanka|lk) code="lk" ;;
         sudan|sd) code="sd" ;;
         suriname|sr) code="sr" ;;
-        svalbard|and|jan|mayen|sj) code="sj" ;;
+        svalbard|sj) code="sj" ;;
         swaziland|sz) code="sz" ;;
         sweden|se) code="se" ;;
         switzerland|ch) code="ch" ;;
-        syrian|arab|republic|sy) code="sy" ;;
+        syria|sy) code="sy" ;;
         taiwan|tw) code="tw" ;;
         tajikistan|tj) code="tj" ;;
         tanzania|tz) code="tz" ;;
         thailand|th) code="th" ;;
-        timor|leste|tl) code="tl" ;;
+        timor-leste|tl) code="tl" ;;
         togo|tg) code="tg" ;;
         tokelau|tk) code="tk" ;;
         tonga|to) code="to" ;;
-        trinidad|and|tobago|tt) code="tt" ;;
+        trinidad-and-tobago|tt) code="tt" ;;
         tunisia|tn) code="tn" ;;
         turkey|tr) code="tr" ;;
         turkmenistan|tm) code="tm" ;;
-        turks|and|caicos|islands|tc) code="tc" ;;
+        turks-and-caicos-islands|tc) code="tc" ;;
         tuvalu|tv) code="tv" ;;
         uganda|ug) code="ug" ;;
         ukraine|ua) code="ua" ;;
-        united|arab|emirates|ae) code="ae" ;;
-        united|kingdom|uk|gb) code="gb" ;;
-        united|states|usa|us) code="us" ;;
+        united-arab-emirates|uae|ae) code="ae" ;;
+        united-kingdom|uk|gb) code="gb" ;;
+        united-states|usa|us) code="us" ;;
         uruguay|uy) code="uy" ;;
         uzbekistan|uz) code="uz" ;;
         vanuatu|vu) code="vu" ;;
         venezuela|ve) code="ve" ;;
         vietnam|vn) code="vn" ;;
-        virgin|islands|british|vg) code="vg" ;;
-        virgin|islands|us|vi) code="vi" ;;
-        wallis|and|futuna|wf) code="wf" ;;
-        western|sahara|eh) code="eh" ;;
+        british-virgin-islands|vg) code="vg" ;;
+        us-virgin-islands|vi) code="vi" ;;
+        wallis-and-futuna|wf) code="wf" ;;
+        western-sahara|eh) code="eh" ;;
         yemen|ye) code="ye" ;;
         zambia|zm) code="zm" ;;
         zimbabwe|zw) code="zw" ;;
@@ -234,11 +235,10 @@ torx() {
 
     printf '\nExitNodes {%s}\nStrictNodes 1\n' "$code" | sudo tee -a "$torrc" >/dev/null
 
-    sudo apt install -y tor
+    sudo apt install -y torsocks
     sudo systemctl reload tor
 
     echo "Requested a Tor exit in $country ({$code})."
 }
-
 
 endOFtorxsh
