@@ -17,7 +17,7 @@ changemirror () {
 movecc="$1";
 rm /etc/apt/sources.list.d/*IMMEDIATE.sources;
 #mullvad relay list | grep -o '^............' | grep wg | grep -o '^....' | sort -u | sed 's/\t//g' > /etc/apt/apt-abroad/ccMullvad.list;
-torexits
+torexits;
 sed 's/^.*,//g' /etc/apt/apt-abroad/torexitIPs.txt | sed 's/UNKNOWN//g' | sort -u  | tr '[:upper:]' '[:lower:]' > /etc/apt/apt-abroad/ccTor.list && rm -f /etc/apt/apt-abroad/torexitIPs.txt;
 cat /etc/apt/apt-abroad/urls.https | sed 's/https:\/\///g' | grep -o '^.*\/debian' | sed 's/.*\(..........\)$/\1/' | sort -u | grep "\." | sed 's/\/debian//g' | sed 's/\.//g' > /etc/apt/apt-abroad/ccDebianhttps.list; 
 grep -F -x -f /etc/apt/apt-abroad/ccTor.list /etc/apt/apt-abroad/ccDebianhttps.list | sed 's/^/&/' | sed 's/$/\/debian/' > /etc/apt/apt-abroad/ccDebianhttsTor.list && rm -f /etc/apt/apt-abroad/ccTor.list;
