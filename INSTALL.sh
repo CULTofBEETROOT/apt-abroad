@@ -9,9 +9,10 @@ chmod +x /home/$USER/Downloads/apt-abroad-main/set_funcenv.sh
 chmod +x /home/$USER/Downloads/apt-abroad-main/setfunc_changemirror.sh
 chmod +x /home/$USER/Downloads/apt-abroad-main/setfunc_torx.sh
 
-# remove this if mullvad is already installed 
-chmod +x /home/$USER/Downloads/apt-abroad-main/install_Mullvad.sh
-bash /home/$USER/Downloads/apt-abroad-main/install_Mullvad.sh
+# remove this if mullvad is already installed or you oppose using them:
+# READ : https://en.wikipedia.org/wiki/Mullvad#Donation_to_the_%C3%96rebro_Party
+# chmod +x /home/$USER/Downloads/apt-abroad-main/install_Mullvad.sh
+# bash /home/$USER/Downloads/apt-abroad-main/install_Mullvad.sh
 # only the above. Note you must have a Mullvad account.
 
 bash /home/$USER/Downloads/apt-abroad-main/apt-httpsonly.sh
