@@ -20,3 +20,4 @@ rm /home/$USER/Downloads/torexitIPs.txt
         printf '%s,%s\n' "$ip" "${country_code:-UNKNOWN}" >> /home/$USER/Downloads/torexitIPs.txt
     done
 } | tee /home/$USER/Downloads/tor_exit_countries.csv
+sudo apt autoremove geoip-bin geoip-database
