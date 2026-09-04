@@ -2,7 +2,7 @@
 
 sudo apt update
 sudo apt install -y curl geoip-bin geoip-database torsocks torbrowser-launcher
-rm /home/$USER/Downloads/torexitIPs.txt
+rm /etc/apt/apt-abroad/torexitIPs.txt
 {
     printf 'ip,country_code\n'
 
@@ -17,7 +17,7 @@ rm /home/$USER/Downloads/torexitIPs.txt
             head -n 1
         )
 
-        printf '%s,%s\n' "$ip" "${country_code:-UNKNOWN}" >> /home/$USER/Downloads/torexitIPs.txt
+        printf '%s,%s\n' "$ip" "${country_code:-UNKNOWN}" >> /etc/apt/apt-abroad/torexitIPs.txt
     done
-} | tee /home/$USER/Downloads/tor_exit_countries.csv
+} | tee /etc/apt/apt-abroad/tor_exit_countries.csv
 sudo apt autoremove geoip-bin geoip-database
