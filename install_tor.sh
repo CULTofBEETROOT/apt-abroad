@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 sudo apt update
-sudo apt install -y curl geoip-bin geoip-database torsocks
-rm/home/$USER/Downloads/torexitIPs.txt
+sudo apt install -y curl geoip-bin geoip-database torsocks torbrowser-launcher
+rm /home/$USER/Downloads/torexitIPs.txt
 {
     printf 'ip,country_code\n'
 
