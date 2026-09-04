@@ -4,7 +4,7 @@ sudo apt install -y curl geoip-bin geoip-database torsocks torbrowser-launcher
 
 cat>/etc/apt/apt-abroad/torexits.sh<<'endofsetfunc_torexitssh'
 torexits() {
-rm /etc/apt/apt-abroad/torexitIPs.txt
+rm -f /etc/apt/apt-abroad/torexitIPs.txt
         printf 'ip,country_code\n'
         curl -fsSL https://check.torproject.org/torbulkexitlist |
         while IFS= read -r ip; do
