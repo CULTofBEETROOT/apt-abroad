@@ -30,6 +30,13 @@ sed -i 's/http:/tor+https:/g' /etc/apt/sources.list.d/apt822IMMEDIATE.sources
 chmod -x /home/$USER/bash_functions.d/torx.sh;
 source /home/$USER/bash_functions.d/torx.sh;
 torx "$movecc";
+rm /etc/apt/apt-abroad/urls.txt
+rm /etc/apt/apt-abroad/urls.https
+rm /etc/apt/apt-abroad/urls.http
+rm /etc/apt/apt-abroad/debhttpsmulmirr.list
+rm /etc/apt/apt-abroad/ccMullvad.list
+rm /etc/apt/apt-abroad/ccDebianhttsMullvad.list
+rm /etc/apt/apt-abroad/cccDebianhttps.list
 sleep 10s;
 apt update && apt upgrade -y;
 }
