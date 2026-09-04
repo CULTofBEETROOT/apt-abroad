@@ -30,7 +30,7 @@ is already present in the script... feel free to remove this line.
 
 tor OPTION:
 
-for those who want a tor layer, a function allows redirects from command line to the exit country of your choice:
+for those who want a (uncorrelated with the Debian mirror country) tor layer, a function allows redirects from command line to the exit country of your choice:
 
 ```
 torx switzerland
