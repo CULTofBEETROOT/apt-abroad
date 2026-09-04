@@ -7,7 +7,6 @@
 if ls /etc/apt/*.list >/dev/null 2>&1; then
 apt-modernize sources
 fi
-
 apt install -y apt-transport-tor
 
 mv /etc/apt/sources.list.d/debian.sources /etc/apt/sources.list.d/apt822_MODEL.disabled
@@ -18,10 +17,14 @@ changemirror () {
 movecc="$1";
 rm /etc/apt/sources.list.d/*IMMEDIATE.sources;
 #mullvad relay list | grep -o '^............' | grep wg | grep -o '^....' | sort -u | sed 's/\t//g' > /etc/apt/apt-abroad/ccMullvad.list;
-sed 's/^.*,//g' /etc/apt/apt-abroad/torexitIPs.txt | sed 's/UNKNOWN//g' | sort -u  | tr '[:upper:]' '[:lower:]' > /etc/apt/apt-abroad/ccTor.list
-cat /etc/apt/apt-abroad/urls.https | sed 's/https:\/\///g' | grep -o '^.*\/debian' | sed 's/.*\(..........\)$/\1/' | sort -u | grep "\." | sed 's/\/debian//g' | sed 's/\.//g' > /etc/apt/apt-abroad/ccDebianhttps.list;
-grep -F -x -f /etc/apt/apt-abroad/ccTor.list /etc/apt/apt-abroad/ccDebianhttps.list | sed 's/^/&/' | sed 's/$/\/debian/' > /etc/apt/apt-abroad/ccDebianhttsTor.list;
+torexits
+sed 's/^.*,//g' /etc/apt/apt-abroad/torexitIPs.txt | sed 's/UNKNOWN//g' | sort -u  | tr '[:upper:]' '[:lower:]' > /etc/apt/apt-abroad/ccTor.list && rm -f /etc/apt/apt-abroad/torexitIPs.txt;
+cat /etc/apt/apt-abroad/urls.https | sed 's/https:\/\///g' | grep -o '^.*\/debian' | sed 's/.*\(..........\)$/\1/' | sort -u | grep "\." | sed 's/\/debian//g' | sed 's/\.//g' > /etc/apt/apt-abroad/ccDebianhttps.list; 
+grep -F -x -f /etc/apt/apt-abroad/ccTor.list /etc/apt/apt-abroad/ccDebianhttps.list | sed 's/^/&/' | sed 's/$/\/debian/' > /etc/apt/apt-abroad/ccDebianhttsTor.list && rm -f /etc/apt/apt-abroad/ccTor.list;
 awk 'NR==FNR{p[$0]=1; n++; next}{for (k in p) if (index($0,k)) {print; break}}' /etc/apt/apt-abroad/ccDebianhttsTor.list /etc/apt/apt-abroad/urls.https > /etc/apt/apt-abroad/debhttpsTormirr.list;
+rm -f /etc/apt/apt-abroad/ccDebianhttps.list
+rm -f /etc/apt/apt-abroad/urls.https
+rm -f /etc/apt/apt-abroad/ccDebianhttsTor.list
 tscheuss="$(cat /etc/apt/apt-abroad/debhttpsTormirr.list | grep ".$movecc/debian" | tail -n 1)";
 sed "s|URIs: http:\/\/deb.debian.org\/debian\/|URIs: ${tscheuss}|g" /etc/apt/sources.list.d/apt822_MODEL.disabled > /etc/apt/sources.list.d/apt822IMMEDIATE.sources;
 sed -i 's/https/tor+https/g' /etc/apt/sources.list.d/apt822IMMEDIATE.sources
@@ -30,13 +33,6 @@ sed -i 's/http:/tor+https:/g' /etc/apt/sources.list.d/apt822IMMEDIATE.sources
 chmod -x /home/$USER/bash_functions.d/torx.sh;
 source /home/$USER/bash_functions.d/torx.sh;
 torx "$movecc";
-rm /etc/apt/apt-abroad/urls.txt
-rm /etc/apt/apt-abroad/urls.https
-rm /etc/apt/apt-abroad/urls.http
-rm /etc/apt/apt-abroad/debhttpsmulmirr.list
-rm /etc/apt/apt-abroad/ccMullvad.list
-rm /etc/apt/apt-abroad/ccDebianhttsMullvad.list
-rm /etc/apt/apt-abroad/cccDebianhttps.list
 sleep 10s;
 apt update && apt upgrade -y;
 }
