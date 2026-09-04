@@ -48,21 +48,21 @@ and will realocate for BOTH:
 
 Privacy and Security
 
-1 --> DNS over HTTPS (Advanced Settings)
+++ 1 --> DNS over HTTPS (Advanced Settings)
 
-2 ------> Custom
+++ 2 ------> Custom
 
-3 ----------> https://dns.digitale-gesellschaft.ch/dns-query (or alternatives)
+++ 3 ----------> https://dns.digitale-gesellschaft.ch/dns-query (or alternatives)
 
-4 --> Connection and software security (Advanced Settings)
+++ 4 --> Connection and software security (Advanced Settings)
 
-5 ------> Proxy settings / COnfigure Proxy
+++ 5 ------> Proxy settings / COnfigure Proxy
 
-6 ---------> Manual Proxy Configuraiton 
+++ 6 ---------> Manual Proxy Configuraiton 
 
-7 ------------> Socks Host : 127.0.0.1 Port 9050
+++ 7 ------------> Socks Host : 127.0.0.1 Port 9050
 
-8 ------------> Proxy DNS when using Socks v5 : Yes.
+++ 8 ------------> Proxy DNS when using Socks v5 : Yes.
 
 
 would you *lastingly* like this code, feel free giving a cofee to a charity...
