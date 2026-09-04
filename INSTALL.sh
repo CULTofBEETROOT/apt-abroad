@@ -6,8 +6,9 @@ unzip /home/$USER/Downloads/apt-abroad-main.zip -d "Downloads"
 
 chmod +x /home/$USER/Downloads/apt-abroad-main/apt-httpsonly.sh
 chmod +x /home/$USER/Downloads/apt-abroad-main/set_funcenv.sh
-chmod +x /home/$USER/Downloads/apt-abroad-main/setfunc_changemirror.sh
+chmod +x /home/$USER/Downloads/apt-abroad-main/install_torsocks.sh
 chmod +x /home/$USER/Downloads/apt-abroad-main/setfunc_torx.sh
+chmod +x /home/$USER/Downloads/apt-abroad-main/setfunc_changemirror.sh
 
 # remove this if mullvad is already installed or you oppose using them:
 # READ : https://en.wikipedia.org/wiki/Mullvad#Donation_to_the_%C3%96rebro_Party
@@ -17,6 +18,7 @@ chmod +x /home/$USER/Downloads/apt-abroad-main/setfunc_torx.sh
 
 bash /home/$USER/Downloads/apt-abroad-main/apt-httpsonly.sh
 bash /home/$USER/Downloads/apt-abroad-main/set_funcenv.sh
+bash /home/$USER/Downloads/apt-abroad-main/install_torsocks.sh
 bash /home/$USER/Downloads/apt-abroad-main/setfunc_torx.sh
 bash /home/$USER/Downloads/apt-abroad-main/setfunc_changemirror.sh
 
