@@ -24,8 +24,8 @@ chmod +x /home/$USER/.bash_functions.d/changemirror.sh
 source /home/$USER/.bash_functions.d/changemirror.sh
 chmod +x /home/$USER/.bash_functions.d/dirsync.load
 source /home/$USER/.bash_functions.d/dirsync.load
-chmod +x /home/$USER/.bash_functions.d/setfunc_torx.sh
-source /home/$USER/.bash_functions.d/setfunc_torx.sh
+chmod +x /home/$USER/.bash_functions.d/torx.sh
+source /home/$USER/.bash_functions.d/torx.sh
 
 cat>/etc/bash.bashrc<<endbashbashrc
 # ---- Load system-wide bash functions from individual files ----
