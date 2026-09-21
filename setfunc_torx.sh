@@ -243,3 +243,59 @@ torx() {
 }
 
 endOFtorxsh
+
+#This is the alias hard-coded alternative for rescue
+cat>/etc/NetworkManager/dispatcher.d/90-reload-tor<<'endofreloadscript'
+#!/bin/sh
+
+case "$2" in
+    up|down)
+        systemctl try-reload tor.service
+        ;;
+esac
+endofreloadscript
+
+
+sudo chmod 755 /etc/NetworkManager/dispatcher.d/90-reload-tor
+
+apt install -y apt-transport-tor
+apt install -y torsock
+touch /etc/tor/torrmodel && echo "ExitNodes {cz}" >> /etc/tor/torrmodel && echo "StrictNodes 1" >> /etc/tor/torrmodel
+cp /etc/tor/torrmodel /etc/tor/torrc
+
+cat>>/root/.bashrc<<'endbashrcaliases'
+alias torxde="sed 's/ExitNodes {cz}/ExitNodes {de}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxjp="sed 's/ExitNodes {cz}/ExitNodes {jp}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxus="sed 's/ExitNodes {cz}/ExitNodes {us}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxfr="sed 's/ExitNodes {cz}/ExitNodes {fr}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxch="sed 's/ExitNodes {cz}/ExitNodes {ch}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxpl="sed 's/ExitNodes {cz}/ExitNodes {pl}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxcz="sed 's/ExitNodes {cz}/ExitNodes {cz}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxuk="sed 's/ExitNodes {cz}/ExitNodes {uk}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxfi="sed 's/ExitNodes {cz}/ExitNodes {fi}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxin="sed 's/ExitNodes {cz}/ExitNodes {in}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxng="sed 's/ExitNodes {cz}/ExitNodes {ng}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxza="sed 's/ExitNodes {cz}/ExitNodes {za}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxis="sed 's/ExitNodes {cz}/ExitNodes {is}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxru="sed 's/ExitNodes {cz}/ExitNodes {ru}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxua="sed 's/ExitNodes {cz}/ExitNodes {ua}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxit="sed 's/ExitNodes {cz}/ExitNodes {it}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxsg="sed 's/ExitNodes {cz}/ExitNodes {sg}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxid="sed 's/ExitNodes {cz}/ExitNodes {id}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxno="sed 's/ExitNodes {cz}/ExitNodes {no}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxpt="sed 's/ExitNodes {cz}/ExitNodes {pt}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxbr="sed 's/ExitNodes {cz}/ExitNodes {br}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxir="sed 's/ExitNodes {cz}/ExitNodes {ir}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxie="sed 's/ExitNodes {cz}/ExitNodes {ie}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxlu="sed 's/ExitNodes {cz}/ExitNodes {lu}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxmn="sed 's/ExitNodes {cz}/ExitNodes {mn}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxke="sed 's/ExitNodes {cz}/ExitNodes {ke}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxhu="sed 's/ExitNodes {cz}/ExitNodes {hu}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxhr="sed 's/ExitNodes {cz}/ExitNodes {hr}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxca="sed 's/ExitNodes {cz}/ExitNodes {ca}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+alias torxal="sed 's/ExitNodes {cz}/ExitNodes {al}/g' /etc/tor/torrmodel > /etc/tor/torrc; cat /etc/tor/torrc; systemctl reload tor.service"
+endbashrcaliases
+
+source /$USER/.bashrc
+source /root/.bashrc
+echo "type eg. : torxch; #this will move your exit to switzerland". 
