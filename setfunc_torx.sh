@@ -244,7 +244,25 @@ torx() {
 
 endOFtorxsh
 
-#This is the alias hard-coded alternative for rescue
+
+wifidevice=$(nmcli -f NAME,UUID,TYPE | grep enp | cut -d ':' -f 1)
+ipv4address=$(ip -4 route get 1.1.1.1 oif $wifidevice | grep -oP '(?<=src )\S+')
+wificonnectionuuid=$(nmcli connection show | grep wlp | tr -s ' ' | cut -d ' ' -f 2)
+ethernetconnectionuuid=$(nmcli connection show | grep enp | tr -s ' ' | cut -d ' ' -f 2)
+
+nmcli connection modify uuid "$wificonnectionuuid" ipv4.route-metric 600
+
+nmcli connection modify uuid "$ethernetconnectionuuid" \
+    ipv4.method manual \
+    ipv4.addresses "$ipv4address"/24 \
+    ipv4.gateway 192.168.1.1 \
+    ipv4.route-metric 100
+
+sudo nmcli connection down uuid "$ethernetconnectionuuid"
+sudo nmcli connection up uuid "$ethernetconnectionuuid"
+sudo nmcli connection down uuid "$wificonnectionuuid"
+sudo nmcli connection up uuid "$wificonnectionuuid"
+
 cat>/etc/NetworkManager/dispatcher.d/90-reload-tor<<'endofreloadscript'
 #!/bin/sh
 
